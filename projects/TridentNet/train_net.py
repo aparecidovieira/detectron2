@@ -127,14 +127,14 @@ def setup(args):
 #    "detectron2://ImageNetPretrained/MSRA/R-101.pkl"
     weight = path + backbone
 #     print(weight)
-#     if not os.path.isfile(weight):
-#         url_weights = 'https://dl.fbaipublicfiles.com/detectron2/' + cfg.MODEL.WEIGHTS.replace('detectron2://', '')
-#         print(url_weights)      
-#         urllib.request.urlretrieve(url_weights, weight)
-# #         url_weights = 'https://dl.fbaipublicfiles.com/detectron2/ImageNetPretrained/MSRA/R-50.pkl'
-# #     weight = '/media/hdd/cesar_workspace/Object_Detection/Detectron2/detectron2/projects/TridentNet/output-101/model_0179999.pth'
+    if not os.path.isfile(weight):
+        url_weights = 'https://dl.fbaipublicfiles.com/detectron2/' + cfg.MODEL.WEIGHTS.replace('detectron2://', '')
+        print(url_weights)      
+        urllib.request.urlretrieve(url_weights, weight)
+#         url_weights = 'https://dl.fbaipublicfiles.com/detectron2/ImageNetPretrained/MSRA/R-50.pkl'
+    weight = '/media/hdd/cesar_workspace/Object_Detection/Detectron2/detectron2/projects/TridentNet/output-101/model_0179999.pth'
 #     weight = '/media/hdd/cesar_workspace/Object_Detection/Detectron2/detectron2/ImageNetPretrained/MSRA/R-50-GN.pkl'
-#     cfg.MODEL.WEIGHTS = weight
+    cfg.MODEL.WEIGHTS = weight
     print(cfg.MODEL.WEIGHTS, 'Loading weights like a Jedi')
 #     cfg.MODEL.WEIGHTS = './output_20k_X/model_final.pth'
 
