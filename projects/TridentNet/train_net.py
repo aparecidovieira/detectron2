@@ -21,7 +21,7 @@ import os
 from detectron2.data import DatasetCatalog, MetadataCatalog
 
 from tridentnet import add_tridentnet_config
-os.environ['CUDA_VISIBLE_DEVICES'] = '2, 3'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '2, 3'
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu' )
 class Trainer(DefaultTrainer):
